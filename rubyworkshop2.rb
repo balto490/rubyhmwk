@@ -10,43 +10,52 @@ class Calculator
 		@value1 = value1
 		@value2 = value2
 	end
-end
 
-class Add < Calculator 
-	def initialize
-		super(value1 , value2)
-	end
 	def add
 		return value1 + value2
 	end
-end
 
-class Sub < Calculator
-	def initialize
-		super(value1 , value2)
-	end
 	def subtract
 		return value1 - value2
 	end
-end
 
-class Mul < Calculator
-	def initialize
-		super(value1 , value2)
-	end
 	def multiply
 		return value1 * value2
 	end
-end
 
-class Div < Calculator
-	def initialize
-		super(value1 , value2)
-	end
 	def divide
 		return value1 / value2
 	end
+
 end
+
+# class Add < Calculator 
+# 	def initialize
+# 		super(value1 , value2)
+# 	end
+	
+# end
+
+# class Sub < Calculator
+# 	def initialize
+# 		super(value1 , value2)
+# 	end
+	
+# end
+
+# class Mul < Calculator
+# 	def initialize
+# 		super(value1 , value2)
+# 	end
+	
+# end
+
+# class Div < Calculator
+# 	def initialize
+# 		super(value1 , value2)
+# 	end
+	
+# end
 
 numbers = Calculator.new(5 , 5)
 
@@ -69,34 +78,35 @@ numbers = Calculator.new(5 , 5)
 
 
 #Create a class to model an elevator
-class Elevator 
+class Elevator
+	attr_accessor :current_floor, :input_floor 
+	def initialize (current_floor , input_floor)
+		@current_floor = current_floor
+		@input_floor = input_floor
+	end
 #floor - the floor you are currently on
-	@@current_floor = 2
+	@current_floor = 2
 	#go_up - tell the elevator to go up a floor
 	def go_up
-		@@current_floor + (@@current_floor += input_floor) = floor
+		@current_floor + (@current_floor += @input_floor) = floor
 		if floor > 12
 			floor = 12
 		end
 	end
 	#go_down - tell the elevator to go down a floor
 	def go_down
-		@@current_floor - (@@current_floor -= input_floor) = floor
+		@current_floor - (@current_floor -= @input_floor) = floor
 		if floor < 1
 			floor = 1
 		end
 	end
 	#floor - set this as a readable attribute to be accessed outside of the class definition
-	def floor_number
-		attr_accessor :floors
-		def initialize(floors)
-			@floors = floors
-		end
-	end
+	
 
 	def cheery_greeting
 		for floor in 1..12
-		puts "Welcome to floor #{floor}!"
+			puts "Welcome to floor #{floor}!"
+		end
 	end
 end
 
