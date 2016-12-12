@@ -79,38 +79,54 @@ numbers = Calculator.new(5 , 5)
 
 #Create a class to model an elevator
 class Elevator
-	attr_accessor :current_floor, :input_floor 
-	def initialize (current_floor , input_floor)
-		@current_floor = current_floor
-		@input_floor = input_floor
+	attr_accessor :current_floor
+
+	def initialize 
+		@current_floor = 1
 	end
-#floor - the floor you are currently on
-	@current_floor = 2
+
 	#go_up - tell the elevator to go up a floor
 	def go_up
-		@current_floor + (@current_floor += @input_floor) = floor
-		if floor > 12
-			floor = 12
+		@current_floor = current_floor + 1
+
+		if @current_floor > 12 
+			@current_floor = 12
 		end
+		puts "GOING UP! You're now on #{current_floor}"
 	end
+
 	#go_down - tell the elevator to go down a floor
 	def go_down
-		@current_floor - (@current_floor -= @input_floor) = floor
-		if floor < 1
-			floor = 1
-		end
-	end
-	#floor - set this as a readable attribute to be accessed outside of the class definition
-	
+		@current_floor = current_floor - 1
 
-	def cheery_greeting
-		for floor in 1..12
-			puts "Welcome to floor #{floor}!"
+		if @current_floor < 1 
+			@current_floor = 1
 		end
+		puts "GOING DOWN! You're now on #{current_floor}"
 	end
+	
+	
 end
 
-# input_floor = Elevator.new(5)
+car_one = Elevator.new
+# puts "You're currenly on #{car_one.current_floor}"
+car_one.go_up
+car_one.go_up
+car_one.go_up
+car_one.go_up
+car_one.go_up
+car_one.go_up
+car_one.go_up
+car_one.go_up
+car_one.go_up
+car_one.go_up
+car_one.go_up
+car_one.go_up
+car_one.go_up
+car_one.go_up
+
+
+
 
 
 
